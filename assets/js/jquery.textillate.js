@@ -135,6 +135,10 @@
         base.$current.find('[class^="word"]')
             .css({ 
               'display': 'inline-block',
+              'font-family': 'Lato',
+              'font-weight': '900',
+              'color': '666',
+
               // fix for poor ios performance
               '-webkit-transform': 'translate3d(0,0,0)',
                  '-moz-transform': 'translate3d(0,0,0)',

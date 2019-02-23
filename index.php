@@ -67,7 +67,6 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
   echo '.timer-bottom { color: ' . (ot_get_option('countdown_font_color_bottom')? ot_get_option('countdown_font_color_bottom'): '#ffffff') . '; }';
 	echo ".button {background:".$button_color." !important;}.button:hover {background:".$button_color_hover." !important;}";
 	echo ".nifty-title {font-family:'".$sitetitle_font."' !important;}";
-	echo ".nifty-coming-soon-message {font-family:'".$heading_font."' !important;}";
 	echo ".timer-item {font-family:'".$counter_font."' !important;}";
 	echo "body p, .nifty-inform, .nifty-success, .nifty-error, input {font-family:'".$paragraph_font."' !important;}";
 	echo '</style>';
@@ -167,12 +166,14 @@ if( 'off' != $niftylogo ) {
                   </div>
               </div>
             </header>
+
             <div class="nifty-row">
             <div class="large-10 small-centered columns text-center">
-            <div class="nifty-coming-soon-message">
-                   <div id="animated_intro" class="tlt">
-                    <ul class="texts" style="display: none">
-                      <li><?php echo 'ENSAMBLER' ?></li>
+
+            <div class="nifty-coming-soon-message ">
+            	<span class="text1">ENSAMBLER</span>
+                   <div id="animated_intro" class="tlt2">
+                    <ul class="texts text2 uppercase">
                       <li><?php echo ot_get_option( 'your_coming_soon_message', true ); ?></li>
                       <li><?php echo ot_get_option( 'enter_second_coming_soon_message', true ); ?></li>
                     </ul>
@@ -472,7 +473,7 @@ if( 'off' != $nifty_timer ) {
 		if( 'off' != $animation ) {
     echo "<script>
 	jQuery(document).ready(function($){
-	 $('.tlt').textillate({
+	 $('.tlt2').textillate({
   selector: '.texts',
   loop: true,
   minDisplayTime: 2500,
@@ -547,5 +548,4 @@ echo "<style>".$additional_css_code."</style>";
 
  ?>
 
-</body>
-</html>
+</b

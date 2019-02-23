@@ -9,20 +9,37 @@
 
 }
 
+body{
+      display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text1{
+    font-size: 60px;
+    color: #000000;
+    font-family: 'boldregular';
+    text-shadow: none;
+    padding-bottom: 20px;
+
+
+}
+
 
 .nifty-main-wrapper div#preloader {
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: 100px;
 	z-index: 999;
 	width: 100%;
 	height: 100%;
 	overflow: visible;
 	background: #FFFFFF url('../images/loading.gif') no-repeat center center;
+    margin: auto 0;
+
 }
 .nifty-logo {
 	width:200px !important;
-	margin:80px auto 40px;
+	margin:0 auto 0;
 }
 .nifty-title{
 	font-size:32px !important;
@@ -33,11 +50,8 @@ h1 {
 }
 
 .nifty-coming-soon-message {
-	font-family:  'Roboto Slab', sans-serif;
-	font-size:4.2em;
-	color:#FFFFFF;
 	margin:30px auto 30px;
-	text-shadow:#333 1px 1px 2px;
+
 	-webkit-text-stroke: 0.20px;
 }
 .nifty-inform {
@@ -51,7 +65,7 @@ h1 {
 	margin:30px auto 10px;
 }
 .nifty-content-full {
-	margin:80px auto 10px;
+	margin:20px auto 10px;
 	text-align:center
 }
 .nifty-content-full p {
@@ -86,14 +100,7 @@ h1 {
 	background:#FFFFFF;
 }
 
-.texto1{
-    font-family: 'boldregular'
-    font-size:24px;
-}
 
-.texto2{
-    font-family: 'arial'
-}
 /* Timer CSS - you can customize overall look of the timer below */
 
 #days, #hours, #minutes, #seconds {
@@ -120,11 +127,11 @@ h1 {
 	font-size:0.8em;
 	padding:15px 0px 0px 0px;
 	-webkit-text-stroke: 0.10px;
-    color: red;
+
 }
 
 .timer-top{
-    color: red;
+    mar
 }
 
 
@@ -920,9 +927,8 @@ margin:50px auto 10px;
 margin:30px auto 30px;
 }
 .coming-soon-message {
-font-family: 'Raleway', sans-serif;
-font-size:2.1em;
-color:#FFFFFF;
+
+color:#cccccc;
 margin:50px auto;
 }
 .inform {
@@ -935,7 +941,4 @@ margin:5px auto 5px;
 font-size:2.8em;
 text-shadow:#555 1px 1px 2px;
 }
-.content-full {
-margin:40px auto 10px;
-}
-}
+
