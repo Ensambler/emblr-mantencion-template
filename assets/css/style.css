@@ -14,16 +14,16 @@ body{
   justify-content: center;
   align-items: center;
 }
+
 .text1{
     font-size: 60px;
-    color: #000000;
+    color: #253143;
     font-family: 'boldregular';
     text-shadow: none;
     padding-bottom: 20px;
 
 
 }
-
 
 .nifty-main-wrapper div#preloader {
 	position: fixed;
@@ -38,7 +38,7 @@ body{
 
 }
 .nifty-logo {
-	width:200px !important;
+	width:140px !important;
 	margin:20px auto 0;
 }
 .nifty-title{

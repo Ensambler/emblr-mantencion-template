@@ -133,7 +133,7 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
 		$logopath =  ot_get_option( 'upload_your_logo' );
 if( 'off' != $niftylogo ) {
 		//echo '<div class="nifty-logo"><a href="'.$sitepath.'"><img src="'.$logopath.'" alt="'.$blogname.'" /></a></div>';
-  echo '<div class="nifty-logo"><img src="' . $sitepath . '/wp-content/uploads/2019/02/logo-svg.svg" alt="logo"/></div>';
+  echo '<div class="nifty-logo"><img src="' . plugins_url( 'template/assets/images/logo-svg.svg', dirname(__FILE__) ) . '" alt="logo"/></div>';
 } elseif ('off' != $sitetitle ) {
 	echo '<div class="nifty-logo"><h1 class="nifty-title">'.$blogname.'</h1></div>';
 
