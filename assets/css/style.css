@@ -836,7 +836,7 @@ text-shadow:#555 1px 1px 2px;
  margin:20px auto 0px;
 }
 .timer-bottom {
-font-size:0.9em;
+font-size:0.7em;
 padding:10px 0px 10px 0px;
 }
 .nifty-timer-item {
@@ -856,6 +856,8 @@ font-size:0.9em;
 color:#FFFFFF;
 font-size:0.9em;
 }
+
+.text1 { font-size: 50px; }
 }
  @media screen and (min-width: 480px) and (max-width: 600px) {
 .nifty-logo {
