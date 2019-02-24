@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'boldregular';
-    src: url('../css/bold-regular/bold-regular-webfont.woff2') format('woff2'),
-         url('./css/bold-regular/bold-regular-webfont.woff') format('woff');
+    src: url('../fonts/bold-regular/bold-regular-webfont.woff2') format('woff2'),
+         url('../fonts/bold-regular/bold-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -69,7 +69,7 @@ h1 {
 	text-align:center
 }
 .nifty-content-full p {
-	font-size:16px;
+	font-size:14px;
 }
 .nifty-error {
 	color:#FFFFFF;
