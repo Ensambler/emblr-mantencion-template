@@ -1,5 +1,7 @@
 /* Nifty Coming soon CSS Document */
 
+/***************************** Fonts @import *****************************/
+
 @font-face {
     font-family: 'boldregular';
     src: url('../fonts/bold-regular/bold-regular-webfont.woff2') format('woff2'),
@@ -9,20 +11,17 @@
 
 }
 
+/*************************************************************************/
+
 body{
-      display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.text1{
-    font-size: 60px;
-    color: #253143;
-    font-family: 'boldregular';
+.ensambler{
     text-shadow: none;
     padding-bottom: 20px;
-
-
 }
 
 .nifty-main-wrapper { margin: 30px auto 30px auto; }
@@ -40,7 +39,7 @@ body{
 
 }
 .nifty-logo {
-	width:140px !important;
+	width:160px;
 	margin:0px auto 0;
 }
 .nifty-title{
@@ -53,9 +52,9 @@ h1 {
 
 .nifty-coming-soon-message {
 	margin:0px auto 30px;
-
 	-webkit-text-stroke: 0.20px;
 }
+
 .nifty-inform {
 	font-family:  'Lato', sans-serif;
 	font-size:0.8em;
@@ -63,15 +62,14 @@ h1 {
 	margin:30px auto 10px;
 	-webkit-text-stroke: 0.10px;
 }
+
 .nifty-contact-details {
 	margin:0;
 }
+
 .nifty-content-full {
 	margin:20px auto 0px;
 	text-align:center
-}
-.nifty-content-full p {
-	font-size:14px;
 }
 .nifty-error {
 	color:#FFFFFF;
@@ -124,18 +122,6 @@ h1 {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	
-}
-.timer-bottom {
-	font-size:0.7em;
-    font-family: 'Lato';
-    font-weight: bold;
-	padding:15px 0px 0px 0px;
-	-webkit-text-stroke: 0.10px;
-
-}
-
-.timer-top{
-    mar
 }
 
 
@@ -775,7 +761,8 @@ _::full-page-media, _:future,
 
 @media screen and (min-width: 0px) and (max-width: 320px) {
 .nifty-logo {
- margin:10px auto 10px;
+ margin:0px auto 0px;
+ width: 115px !important;
 }
 .nifty-coming-soon-message {
  font-size:1.1em;
@@ -787,17 +774,17 @@ _::full-page-media, _:future,
 .nifty-content-full {
  margin:2px auto 2px;
 }
-#days, #hours, #minutes, #seconds {
- font-size:1.3em;
-}
+
 .timer-bottom {
- font-size:0.5em;
+ font-size: 10px !important;
  padding:6px 0px 6px 0px;
 }
 .timer-item {
  padding:5px 0px 0px 0px;
  border:none;
 }
+.timer-top { font-size: 6px !important; }
+
 #slider-navigation a {
  margin-left:5px;
  font-size:0.9em;
@@ -809,16 +796,18 @@ _::full-page-media, _:future,
 .nifty-success {
  font-size:0.6em;
 }
+.ensambler { font-size: 42px !important; }
+.coming-soon-texts {
+    font-size: 16px !important;
 }
- @media screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
 .nifty-logo {
 margin:0px auto 0px;
-width: 120px !important;
+width: 130px !important;
 }
 .nifty-coming-soon-message {
-font-family: 'Raleway', sans-serif;
-font-size:1em;
-color:#FFFFFF;
 margin:0px auto 30px;
 }
 .nifty-inform {
@@ -830,21 +819,20 @@ margin:5px auto 5px;
 .nifty-content-full p {
     font-size:13px !important;
 }
-#days, #hours, #minutes, #seconds {
-font-size:1.8em;
-text-shadow:#555 1px 1px 2px;
-}
+
 .nifty-content-full {
  margin:20px auto 0px;
 }
 .timer-bottom {
-font-size:0.7em;
+font-size: 11px !important;
 padding:10px 0px 10px 0px;
 }
 .nifty-timer-item {
 padding:15px 0px 0px 0px;
 border:none;
 }
+.timer-top { font-size: 8px !important; }
+
 #slider-navigation a {
 margin-left:10px;
 font-size:0.9em;
@@ -859,12 +847,16 @@ color:#FFFFFF;
 font-size:0.9em;
 }
 
-.text1 { font-size: 50px; }
+.coming-soon-texts {
+    font-size: 18px !important;
+}
+
+.ensambler { font-size: 48px !important; }
 }
  @media screen and (min-width: 480px) and (max-width: 600px) {
 .nifty-logo {
 margin:0px auto 0px;
-width: 140px !important;
+width: 155px !important;
 }
 .nifty-coming-soon-message {
 font-family: 'Raleway', sans-serif;
@@ -879,24 +871,26 @@ color:#FFFFFF;
 margin:5px auto 5px;
 }
 #days, #hours, #minutes, #seconds {
-font-size:1.9em;
+font-size:2em;
 text-shadow:#555 1px 1px 2px;
 }
 .nifty-timer-item {
 padding:15px 0px 0px 0px;
 border:none;
 }
+.timer-top { font-size: 20px !important; }
 .nifty-content-full {
  margin:25px auto 5px;
 }
 .nifty-content-full p {
-    font-size:13px !important;
+    font-size:14px !important;
 }
 }
+
  @media screen and (min-width: 600px) and (max-width: 768px) {
 .nifty-logo {
 margin:0px auto 0px;
-width: 140px !important;
+width: 160px !important;
 }
 .nifty-coming-soon-message {
 font-family: 'Raleway', sans-serif;
@@ -918,6 +912,8 @@ text-shadow:#555 1px 1px 2px;
 padding:25px 5px 25px 5px;
 border:none;
 }
+
+.timer-top { font-size: 14px !important; }
 .content-full {
 margin:50px auto 10px;
 }
@@ -925,6 +921,7 @@ margin:50px auto 10px;
     font-size:15px !important;
 }
 }
+
 @media screen and (min-width: 768px) and (max-width: 960px) {
 .logo {
 margin:30px auto 30px;
@@ -944,8 +941,106 @@ margin:5px auto 5px;
 font-size:2.8em;
 text-shadow:#555 1px 1px 2px;
 }
+.timer-top { font-size: 14px !important; }
 }
 
-/* Overwrite */
+/******************************** Overwrite ********************************/
 
-/*div#clock { max-width: 49em !important; border:1px solid red; }*/
+.nifty-coming-soon-message {
+    text-shadow: none !important;
+}
+
+.nifty-contact-details p { margin-bottom: 0px; }
+.weforms_submit_btn { background-color: #1fbda2 !important; }
+.wpuf-label label {
+    color: #000;
+    font-size: 16px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+#days, #hours, #minutes, #seconds {
+    text-shadow: none;
+}
+
+.timer-bottom {
+    padding:15px 0px 0px 0px;
+    -webkit-text-stroke: 0.10px;
+}
+
+#clock { margin-top: 0px; }
+
+a:link {
+    color: #253143;
+    
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+}
+
+a:link:hover { color: #1FBDA2; }
+
+body {
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(242,242,242,1)));
+    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=1 );
+}
+
+.coming-soon-texts {
+    display: inline-block;
+    /* fix for poor ios performance */
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/********************* TIPOGRAFÍAS *********************/
+
+.ensambler { /* Texto ENSAMBLER */
+    font-family: 'boldregular';
+    /* font weight es bold */
+    font-size: 60px;
+    letter-spacing: 6px;
+    
+    color: #253143;
+}
+
+.coming-soon-texts { /* Letras Development & frase */
+    font-family: 'Lato';
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px; /* ¿opcional? */
+
+    color: #666;
+}
+
+.timer-top { /* Números contador */
+    font-family: 'Abel'; 
+    font-size: 10px;
+    font-weight: bold;
+
+    color: #1FBDA2;
+}
+
+.timer-bottom { /* Letra días, horas, minutos, segundos */
+    font-family: 'Roboto'; /* ó Lato */
+    font-weight: 500;
+    font-size: 12px;
+
+    color: #253143;
+}
+
+.nifty-content-full p { /* Letras footer */
+    font-family: 'Roboto';
+    font-weight: normal;
+    font-size: 14px;
+
+    color: #253143;
+}

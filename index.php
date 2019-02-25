@@ -31,6 +31,12 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
     <meta name="theme-color" content="#ffffff">
 
     <!-- echo plugins_url('template/assets/images/favicon',dirname(__FILE__)); -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <!-- /Google Fonts -->
 
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/normalize.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/foundation.css',dirname(__FILE__)); ?>">
@@ -46,30 +52,8 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
 
     <?php
 
-	$background_color = ot_get_option( 'background_color' );
-	$sitetitle_font = ot_get_option( 'choose_sitetitle_font' );
-	$heading_font = ot_get_option( 'choose_heading_font' );
-	$paragraph_font = ot_get_option( 'choose_paragraph_font' );
-	$counter_font = ot_get_option( 'choose_counter_font' );
 	$button_color = ot_get_option( 'sign_up_button_color' );
 	$button_color_hover = ot_get_option( 'sign_up_button_color_hover' );
-
-
-	echo "<link href='https://fonts.googleapis.com/css?family=".$sitetitle_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-	echo "<link href='https://fonts.googleapis.com/css?family=".$heading_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-	echo "<link href='https://fonts.googleapis.com/css?family=".$paragraph_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-  if( 'off' != $nifty_timer ) {
-    echo "<link href='https://fonts.googleapis.com/css?family=".$counter_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-  }
-	echo "<style>";
-  echo "body {background:".$background_color." !important;}";
-  echo '#days, #hours, #minutes, #seconds { color: ' . (ot_get_option('countdown_font_color')? ot_get_option('countdown_font_color'): '#ffffff') . '; }';
-  echo '.timer-bottom { color: ' . (ot_get_option('countdown_font_color_bottom')? ot_get_option('countdown_font_color_bottom'): '#ffffff') . '; }';
-	echo ".button {background:".$button_color." !important;}.button:hover {background:".$button_color_hover." !important;}";
-	echo ".nifty-title {font-family:'".$sitetitle_font."' !important;}";
-	echo ".timer-item {font-family:'".$counter_font."' !important;}";
-	echo "body p, .nifty-inform, .nifty-success, .nifty-error, input {font-family:'".$paragraph_font."' !important;}";
-	echo '</style>';
 
   $weforms_form = ot_get_option( 'weforms_sign_up_form' );
   $weforms_form_enable = ot_get_option( 'weforms_sign_up_form_enable' );
@@ -171,8 +155,8 @@ if( 'off' != $niftylogo ) {
             <div class="large-10 small-centered columns text-center">
 
             <div class="nifty-coming-soon-message ">
-            	<span class="text1">ENSAMBLER</span>
-                   <div id="animated_intro" class="tlt2">
+            	<span class="ensambler">ENSAMBLER</span>
+                   <div id="animated_intro" class="tlt">
                     <ul class="texts text2 uppercase">
                       <li><?php echo ot_get_option( 'your_coming_soon_message', true ); ?></li>
                       <li><?php echo ot_get_option( 'enter_second_coming_soon_message', true ); ?></li>
@@ -473,7 +457,7 @@ if( 'off' != $nifty_timer ) {
 		if( 'off' != $animation ) {
     echo "<script>
 	jQuery(document).ready(function($){
-	 $('.tlt2').textillate({
+	 $('.tlt').textillate({
   selector: '.texts',
   loop: true,
   minDisplayTime: 2500,
@@ -548,4 +532,5 @@ echo "<style>".$additional_css_code."</style>";
 
  ?>
 
-</b
+</body>
+</html>
