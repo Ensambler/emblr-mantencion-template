@@ -52,7 +52,7 @@ h1 {
 }
 
 .nifty-coming-soon-message {
-	margin:30px auto 30px;
+	margin:0px auto 30px;
 
 	-webkit-text-stroke: 0.20px;
 }
@@ -811,13 +811,13 @@ _::full-page-media, _:future,
  @media screen and (min-width: 320px) and (max-width: 480px) {
 .nifty-logo {
 margin:0px auto 0px;
-width: 140px !important;
+width: 120px !important;
 }
 .nifty-coming-soon-message {
 font-family: 'Raleway', sans-serif;
 font-size:1.4em;
 color:#FFFFFF;
-margin:30px auto;
+margin:0px auto 30px;
 }
 .nifty-inform {
 font-family:  'Roboto Slab', sans-serif;
@@ -861,14 +861,14 @@ font-size:0.9em;
 }
  @media screen and (min-width: 480px) and (max-width: 600px) {
 .nifty-logo {
-margin:12px auto 12px;
+margin:0px auto 0px;
 width: 140px !important;
 }
 .nifty-coming-soon-message {
 font-family: 'Raleway', sans-serif;
 font-size:1.4em;
 color:#FFFFFF;
-margin:30px auto;
+margin:0px auto 30px;
 }
 .nifty-inform {
 font-family: 'Raleway', sans-serif;
@@ -900,7 +900,7 @@ width: 140px !important;
 font-family: 'Raleway', sans-serif;
 font-size:1.4em;
 color:#FFFFFF;
-margin:30px auto;
+margin:0px auto 30px;
 }
 .inform {
 font-family: 'Raleway', sans-serif;
