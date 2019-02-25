@@ -1007,7 +1007,7 @@ body {
     font-family: 'boldregular';
     /* font weight es bold */
     font-size: 60px;
-    letter-spacing: 6px;
+    letter-spacing: 5px;
     
     color: #253143;
 }
@@ -1025,6 +1025,7 @@ body {
     font-family: 'Abel'; 
     font-size: 10px;
     font-weight: bold;
+    letter-spacing: 1px;
 
     color: #1FBDA2;
 }
@@ -1033,6 +1034,7 @@ body {
     font-family: 'Roboto'; /* ó Lato */
     font-weight: 500;
     font-size: 12px;
+    letter-spacing: 0.5px;
 
     color: #253143;
 }
@@ -1041,6 +1043,7 @@ body {
     font-family: 'Roboto';
     font-weight: normal;
     font-size: 14px;
+    letter-spacing: 0.3px;
 
     color: #253143;
 }
