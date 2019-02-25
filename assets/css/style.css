@@ -126,7 +126,9 @@ h1 {
 	
 }
 .timer-bottom {
-	font-size:0.8em;
+	font-size:0.7em;
+    font-family: 'Lato';
+    font-weight: bold;
 	padding:15px 0px 0px 0px;
 	-webkit-text-stroke: 0.10px;
 
@@ -815,7 +817,7 @@ width: 120px !important;
 }
 .nifty-coming-soon-message {
 font-family: 'Raleway', sans-serif;
-font-size:1.4em;
+font-size:1em;
 color:#FFFFFF;
 margin:0px auto 30px;
 }
