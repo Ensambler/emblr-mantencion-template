@@ -41,7 +41,7 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/normalize.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/foundation.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/animate.css',dirname(__FILE__)); ?>">
-    <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/icomoon.css',dirname(__FILE__)); ?>">
+    <!-- <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/icomoon.css',dirname(__FILE__)); ?>"> -->
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/style.css',dirname(__FILE__)); ?>">
 
 	<script src="<?php echo plugins_url('template/assets/js/vendor/custom.modernizr.js',dirname(__FILE__)); ?>"></script>
