@@ -979,17 +979,10 @@ a:link {
     transition-duration: 150ms;
 }
 
-a:link:hover { color: #253143; }
+a:link:hover { color: #FFF; }
 
 body {
-    background: rgba(255,255,255,1);
-    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(242,242,242,1)));
-    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
-    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(242,242,242,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=1 );
+    background: #253143;
 }
 
 .coming-soon-texts {
@@ -1014,7 +1007,7 @@ body {
     font-size: 60px;
     letter-spacing: 3px;
     
-    color: #253143;
+    color: #FFF;
 }
 
 .coming-soon-texts { /* Letras Development & frase */
@@ -1023,7 +1016,7 @@ body {
     font-weight: 900;
     letter-spacing: 1px; /* ¿opcional? */
 
-    color: #666;
+    color: #E1E6E5;
 }
 
 .timer-top { /* Números contador */
@@ -1041,7 +1034,7 @@ body {
     font-size: 12px;
     letter-spacing: 0.5px;
 
-    color: #253143;
+    color: #FFF;
 }
 
 .nifty-content-full p { /* Letras footer */
@@ -1050,8 +1043,8 @@ body {
     font-size: 14px;
     letter-spacing: 0.3px;
 
-    color: #666;
+    color: #FFF;
 }
 
-.nifty-content-full p.contact-website { color: #253143; } /* Letra ENSAMBLER · 2019 footer */
+.nifty-content-full p.contact-website { color: #E1E6E5; } /* Letra ENSAMBLER · 2019 footer */
 

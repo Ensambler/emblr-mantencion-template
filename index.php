@@ -8,8 +8,17 @@ Autor: Diego Ulloa <diegoulloao@icloud.com>
 
 */
 
-$nifty_timer = ot_get_option( 'display_count_down_timer' );
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado
+
 $particles = true;
+$music = true;
+
+// --------------------------------------------------------
+
+$nifty_timer = ot_get_option( 'display_count_down_timer' );
+$hour = date("H") - 3; // Ajusta hora a Chile.
+$day = ($hour >= 7 && $hour < 19) ? true : false;
 
 ?>
 <!DOCTYPE html <?php language_attributes(); ?>>
@@ -43,7 +52,11 @@ $particles = true;
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/foundation.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/animate.css',dirname(__FILE__)); ?>">
     <!-- <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/icomoon.css',dirname(__FILE__)); ?>"> -->
+    <?php if( $day ): ?>
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/style.css',dirname(__FILE__)); ?>">
+    <?php else: ?>
+    <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/style-darkmode.css',dirname(__FILE__)); ?>">
+    <? endif; ?>
 
 	<script src="<?php echo plugins_url('template/assets/js/vendor/custom.modernizr.js',dirname(__FILE__)); ?>"></script>
 
@@ -96,6 +109,13 @@ $particles = true;
 </head>
 <body <?php body_class(); ?>>
     <?php if( $particles ): ?> <div id="particles-js"></div> <!-- particles here! --> <?php endif; ?>
+    <?php if( $music ): ?>
+      <iframe src="<?php echo plugins_url('template/assets/extras/250-milliseconds-of-silence.mp3',dirname(__FILE__)) ?>" allow="autoplay" id="audio" style="display:none"></iframe>
+      <audio id="player" autoplay loop>
+          <source src="<?php echo plugins_url('template/assets/extras/back.mp3',dirname(__FILE__)) ?>" type="audio/mp3">
+      </audio>
+    <?php endif; ?>
+    
     <div class="nifty-main-wrapper" id="nifty-full-wrapper">
 
 <!-- Page Preloader -->
@@ -123,7 +143,10 @@ $particles = true;
 		$logopath =  ot_get_option( 'upload_your_logo' );
 if( 'off' != $niftylogo ) {
 		//echo '<div class="nifty-logo"><a href="'.$sitepath.'"><img src="'.$logopath.'" alt="'.$blogname.'" /></a></div>';
-  echo '<div class="nifty-logo"><img src="' . plugins_url( 'template/assets/images/logo-svg.svg', dirname(__FILE__) ) . '" alt="logo"/></div>';
+  if( $day )
+    echo '<div class="nifty-logo"><img src="' . plugins_url( 'template/assets/images/logo-svg.svg', dirname(__FILE__) ) . '" alt="logo"/></div>';
+  else
+    echo '<div class="nifty-logo"><img src="' . plugins_url( 'template/assets/images/logo-darkmode-svg.svg', dirname(__FILE__) ) . '" alt="logo"/></div>';
 } elseif ('off' != $sitetitle ) {
 	echo '<div class="nifty-logo"><h1 class="nifty-title">'.$blogname.'</h1></div>';
 
