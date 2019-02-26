@@ -9,6 +9,7 @@ Autor: Diego Ulloa <diegoulloao@icloud.com>
 */
 
 $nifty_timer = ot_get_option( 'display_count_down_timer' );
+$particles = true;
 
 ?>
 <!DOCTYPE html <?php language_attributes(); ?>>
@@ -83,13 +84,18 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
     /* ]]> */</script>';
   }
 
-
-	?>
-
-
+  if( $particles ): ?>
+    <script src="<?php echo plugins_url('template/assets/js/particles.min.js',dirname(__FILE__)) ?>" type="text/javascript"></script>
+    
+    <script>
+      /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+      particlesJS.load('particles-js', '<?php echo plugins_url('template/assets/js/particles.json',dirname(__FILE__)) ?>');
+    </script>
+  <? endif; ?>
 
 </head>
 <body <?php body_class(); ?>>
+    <?php if( $particles ): ?> <div id="particles-js"></div> <!-- particles here! --> <?php endif; ?>
     <div class="nifty-main-wrapper" id="nifty-full-wrapper">
 
 <!-- Page Preloader -->

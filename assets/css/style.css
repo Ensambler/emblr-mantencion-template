@@ -1001,6 +1001,11 @@ body {
     transform: translate3d(0,0,0);
 }
 
+#particles-js {
+    position: absolute;
+    width: 100%;
+}
+
 /********************* TIPOGRAFÍAS *********************/
 
 .ensambler { /* Texto ENSAMBLER */
