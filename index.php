@@ -48,6 +48,9 @@ $day = ($hour >= 7 && $hour < 19) ? true : false;
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <!-- /Google Fonts -->
 
+	<!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/normalize.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/foundation.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/animate.css',dirname(__FILE__)); ?>">
@@ -165,11 +168,11 @@ if( 'off' != $niftylogo ) {
         $slide_index++;
       }
       if (ot_get_option( 'enable_contact_details' ) != 'off') {
-        echo '<a data-slide-index="' . ($slide_index) . '" href=""><span aria-hidden="true" class="icon-location"></span></a>';
+        echo '<a data-slide-index="' . ($slide_index) . '" href=""><i class="fas fa-info"></i></a>';
         $slide_index++;
       }
       if (ot_get_option( 'enable_social_links' ) != 'off') {
-        echo '<a data-slide-index="' . ($slide_index) . '" href=""><span aria-hidden="true" class="icon-thumbs-up"></span></a>';
+        echo '<a data-slide-index="' . ($slide_index) . '" href=""><i class="fas fa-share-square"></i></a>';
         $slide_index++;
       }
       echo '</div>';
@@ -352,21 +355,21 @@ if( 'off' != $niftylogo ) {
     echo '<li>
         <section class="large-12 columns">
 		<div class="nifty-row">
-        <div class="small-12 small-centered columns">
+        <div id="social" class="small-12 small-centered columns">
         <div class="nifty-inform">'.$social_intro.
 		'</div>';
     if (!empty($social_facebook) && $social_facebook != '#')
-      echo '<a href="'.$social_facebook.'"><span aria-hidden="true" class="icon-facebook"></span></a>';
+      echo '<a href="'.$social_facebook.'"><i class="fab fa-facebook-f"></i></a>';
     if (!empty($social_twitter) && $social_twitter != '#')
 		  echo '<a href="'.$social_twitter.'"><span aria-hidden="true" class="icon-twitter"></span></a>';
     if (!empty($social_linkedin) && $social_linkedin != '#')
-      echo '<a href="'.$social_linkedin.'"><span aria-hidden="true" class="icon-linkedin"></span></a>';
+      echo '<a href="'.$social_linkedin.'"><i class="fab fa-linkedin-in"></i></a>';
     if (!empty($social_pinterest) && $social_pinterest != '#')
       echo '<a href="'.$social_pinterest.'"><span aria-hidden="true" class="icon-pinterest"></span></a>';
     if (!empty($social_instagram) && $social_instagram != '#')
       echo '<a href="'.$social_instagram.'"><span aria-hidden="true" class="icon-instagram"></span></a>';
     if (!empty($social_googleplus) && $social_googleplus!= '#')
-      echo '<a href="'.$social_googleplus.'"><span aria-hidden="true" class="icon-google-plus"></span></a>';
+      echo '<a href="'.$social_googleplus.'"><i class="fab fa-github"></i></a>';
     if (!empty($social_vimeo) && $social_vimeo != '#')
       echo '<a href="' . $social_vimeo .'"><span aria-hidden="true" class="icon-vimeo"></span></a>';
 
