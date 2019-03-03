@@ -389,7 +389,10 @@ if( 'off' != $niftylogo ) {
     </ul>
   </div>
 </div>
+<div class="scrollme">
+	<a href="#"><i class="fas fa-chevron-right"></i></a>
 </div>
+</div> <!-- end main wrapper -->
 
 
 <!-- jQuery Vegas Background Slider -->
