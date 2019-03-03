@@ -47,6 +47,7 @@ $day = ($hour >= 7 && $hour < 19) ? true : false;
 		$preloader = ot_get_option( 'enable_preloader' );
 
 		if( 'off' != $preloader ): ?>
+			<script src="<?php echo plugins_url('template/assets/js/pace.min.js',dirname(__FILE__)) ?>" type="text/javascript"></script>
 			<link href="<?php echo plugins_url('template/assets/css/pace.css',dirname(__FILE__)) ?>" rel="stylesheet"></script>
 		<? endif; ?>
     
@@ -466,14 +467,6 @@ jQuery(function($) {
 <?php
 }
 ?>
-
-<!-- Page Preloader js -->
-    <?php
-		$preloader = ot_get_option( 'enable_preloader' );
-
-		if( 'off' != $preloader ): ?>
-			<script src="<?php echo plugins_url('template/assets/js/pace.min.js',dirname(__FILE__)) ?>" type="text/javascript"></script>
-		<? endif; ?>
 
 <!-- Footer js scripts -->
 
