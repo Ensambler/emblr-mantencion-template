@@ -41,6 +41,14 @@ $day = ($hour >= 7 && $hour < 19) ? true : false;
     <meta name="theme-color" content="#ffffff">
 
     <!-- echo plugins_url('template/assets/images/favicon',dirname(__FILE__)); -->
+
+    <!-- Page Preloader -->
+    <?php
+		$preloader = ot_get_option( 'enable_preloader' );
+
+		if( 'off' != $preloader ): ?>
+			<link href="<?php echo plugins_url('template/assets/css/pace.css',dirname(__FILE__)) ?>" rel="stylesheet"></script>
+		<? endif; ?>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
@@ -120,19 +128,6 @@ $day = ($hour >= 7 && $hour < 19) ? true : false;
     <?php endif; ?>
     
     <div class="nifty-main-wrapper" id="nifty-full-wrapper">
-
-<!-- Page Preloader -->
-
-    <?php
-		$preloader = ot_get_option( 'enable_preloader' );
-
-				if( 'off' != $preloader ) {
-			echo '<div id="preloader"></div>';
-		} else {
-		   ;
-		}
-	?>
-
         <div class="nifty-content-wrapper">
             <header class="nifty-row ">
                 <div class="large-12 columns text-center">
@@ -471,6 +466,14 @@ jQuery(function($) {
 <?php
 }
 ?>
+
+<!-- Page Preloader js -->
+    <?php
+		$preloader = ot_get_option( 'enable_preloader' );
+
+		if( 'off' != $preloader ): ?>
+			<script src="<?php echo plugins_url('template/assets/js/pace.min.js',dirname(__FILE__)) ?>" type="text/javascript"></script>
+		<? endif; ?>
 
 <!-- Footer js scripts -->
 

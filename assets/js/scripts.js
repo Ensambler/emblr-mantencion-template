@@ -18,9 +18,10 @@ jQuery('.scrollme i').on('click', function() {
 // Preloader //
 
 jQuery(document).ready(function($) {
-$(window).load(function(){
+  // Se reemplaza preloader nativo por pace.js
+/*$(window).load(function(){
 	$('#preloader').fadeOut('fast',function(){$(this).remove();});
-});
+});*/
 
 // Email Form Settings //
 
