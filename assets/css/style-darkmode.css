@@ -117,7 +117,7 @@ h1 {
 .timer-item {
 	width:95%;
 	color:#FFF;
-	padding:25px 5px 25px 5px;
+	padding:25px 0px 25px 0px;
 	margin:auto;
 	text-align:center;
 	-webkit-transition: all 0.5s ease;
@@ -786,7 +786,7 @@ _::full-page-media, _:future,
  padding:6px 0px 6px 0px;
 }
 .timer-item {
- padding:5px 0px 0px 0px;
+ padding:25px 0px 25px 0px;
  border:none;
 }
 .timer-top { font-size: 6px !important; }
@@ -914,7 +914,7 @@ font-size:2.8em;
 text-shadow:#555 1px 1px 2px;
 }
 .timer-item {
-padding:25px 5px 25px 5px;
+padding:25px 0px 25px 0px;
 border:none;
 }
 
