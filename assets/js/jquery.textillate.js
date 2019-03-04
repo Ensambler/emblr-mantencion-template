@@ -133,14 +133,7 @@
           .lettering('words');
 
         base.$current.find('[class^="word"]')
-            .css({ 
-              'display': 'inline-block',
-              // fix for poor ios performance
-              '-webkit-transform': 'translate3d(0,0,0)',
-                 '-moz-transform': 'translate3d(0,0,0)',
-                   '-o-transform': 'translate3d(0,0,0)',
-                      'transform': 'translate3d(0,0,0)'
-            })
+            .addClass('coming-soon-texts')
             .each(function () { $(this).lettering() });
 
         var $chars = base.$current.find('[class^="char"]')

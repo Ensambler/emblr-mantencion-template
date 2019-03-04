@@ -8,7 +8,17 @@ Autor: Diego Ulloa <diegoulloao@icloud.com>
 
 */
 
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado
+
+$particles = true;
+$music = false;
+
+// --------------------------------------------------------
+
 $nifty_timer = ot_get_option( 'display_count_down_timer' );
+$hour = date("H") - 3; // Ajusta hora a Chile.
+$day = ($hour >= 7 && $hour < 19) ? true : false;
 
 ?>
 <!DOCTYPE html <?php language_attributes(); ?>>
@@ -32,11 +42,33 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
 
     <!-- echo plugins_url('template/assets/images/favicon',dirname(__FILE__)); -->
 
+    <!-- Page Preloader -->
+    <?php
+		$preloader = ot_get_option( 'enable_preloader' );
+
+		if( 'off' != $preloader ): ?>
+			<script src="<?php echo plugins_url('template/assets/js/pace.min.js',dirname(__FILE__)) ?>" type="text/javascript"></script>
+			<link href="<?php echo plugins_url('template/assets/css/pace.css',dirname(__FILE__)) ?>" rel="stylesheet"></script>
+		<? endif; ?>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <!-- /Google Fonts -->
+
+	<!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/normalize.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/foundation.css',dirname(__FILE__)); ?>">
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/animate.css',dirname(__FILE__)); ?>">
-    <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/icomoon.css',dirname(__FILE__)); ?>">
+    <!-- <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/icomoon.css',dirname(__FILE__)); ?>"> -->
+    <?php if( $day ): ?>
     <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/style.css',dirname(__FILE__)); ?>">
+    <?php else: ?>
+    <link rel="stylesheet" href="<?php echo plugins_url('template/assets/css/style-darkmode.css',dirname(__FILE__)); ?>">
+    <? endif; ?>
 
 	<script src="<?php echo plugins_url('template/assets/js/vendor/custom.modernizr.js',dirname(__FILE__)); ?>"></script>
 
@@ -46,31 +78,8 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
 
     <?php
 
-	$background_color = ot_get_option( 'background_color' );
-	$sitetitle_font = ot_get_option( 'choose_sitetitle_font' );
-	$heading_font = ot_get_option( 'choose_heading_font' );
-	$paragraph_font = ot_get_option( 'choose_paragraph_font' );
-	$counter_font = ot_get_option( 'choose_counter_font' );
 	$button_color = ot_get_option( 'sign_up_button_color' );
 	$button_color_hover = ot_get_option( 'sign_up_button_color_hover' );
-
-
-	echo "<link href='https://fonts.googleapis.com/css?family=".$sitetitle_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-	echo "<link href='https://fonts.googleapis.com/css?family=".$heading_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-	echo "<link href='https://fonts.googleapis.com/css?family=".$paragraph_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-  if( 'off' != $nifty_timer ) {
-    echo "<link href='https://fonts.googleapis.com/css?family=".$counter_font."&subset=latin,latin-ext' rel='stylesheet' type='text/css'>";
-  }
-	echo "<style>";
-  echo "body {background:".$background_color." !important;}";
-  echo '#days, #hours, #minutes, #seconds { color: ' . (ot_get_option('countdown_font_color')? ot_get_option('countdown_font_color'): '#ffffff') . '; }';
-  echo '.timer-bottom { color: ' . (ot_get_option('countdown_font_color_bottom')? ot_get_option('countdown_font_color_bottom'): '#ffffff') . '; }';
-	echo ".button {background:".$button_color." !important;}.button:hover {background:".$button_color_hover." !important;}";
-	echo ".nifty-title {font-family:'".$sitetitle_font."' !important;}";
-	echo ".nifty-coming-soon-message {font-family:'".$heading_font."' !important;}";
-	echo ".timer-item {font-family:'".$counter_font."' !important;}";
-	echo "body p, .nifty-inform, .nifty-success, .nifty-error, input {font-family:'".$paragraph_font."' !important;}";
-	echo '</style>';
 
   $weforms_form = ot_get_option( 'weforms_sign_up_form' );
   $weforms_form_enable = ot_get_option( 'weforms_sign_up_form_enable' );
@@ -100,27 +109,26 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
     /* ]]> */</script>';
   }
 
-
-	?>
-
-
+  if( $particles ): ?>
+    <script src="<?php echo plugins_url('template/assets/js/particles.min.js',dirname(__FILE__)) ?>" type="text/javascript"></script>
+    
+    <script>
+      /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+      particlesJS.load('particles-js', '<?php echo plugins_url('template/assets/js/particles.json',dirname(__FILE__)) ?>');
+    </script>
+  <? endif; ?>
 
 </head>
 <body <?php body_class(); ?>>
+    <?php if( $particles ): ?> <div id="particles-js"></div> <!-- particles here! --> <?php endif; ?>
+    <?php if( $music ): ?>
+      <iframe src="<?php echo plugins_url('template/assets/extras/250-milliseconds-of-silence.mp3',dirname(__FILE__)) ?>" allow="autoplay" id="audio" style="display:none"></iframe>
+      <audio id="player" autoplay loop>
+          <source src="<?php echo plugins_url('template/assets/extras/back.mp3',dirname(__FILE__)) ?>" type="audio/mp3">
+      </audio>
+    <?php endif; ?>
+    
     <div class="nifty-main-wrapper" id="nifty-full-wrapper">
-
-<!-- Page Preloader -->
-
-    <?php
-		$preloader = ot_get_option( 'enable_preloader' );
-
-				if( 'off' != $preloader ) {
-			echo '<div id="preloader"></div>';
-		} else {
-		   ;
-		}
-	?>
-
         <div class="nifty-content-wrapper">
             <header class="nifty-row ">
                 <div class="large-12 columns text-center">
@@ -134,7 +142,10 @@ $nifty_timer = ot_get_option( 'display_count_down_timer' );
 		$logopath =  ot_get_option( 'upload_your_logo' );
 if( 'off' != $niftylogo ) {
 		//echo '<div class="nifty-logo"><a href="'.$sitepath.'"><img src="'.$logopath.'" alt="'.$blogname.'" /></a></div>';
-  echo '<div class="nifty-logo"><img src="' . $sitepath . '/wp-content/uploads/2019/02/logo-svg.svg" alt="logo"/></div>';
+  if( $day )
+    echo '<div class="nifty-logo"><img src="' . plugins_url( 'template/assets/images/logo-svg.svg', dirname(__FILE__) ) . '" alt="logo"/></div>';
+  else
+    echo '<div class="nifty-logo"><img src="' . plugins_url( 'template/assets/images/logo-darkmode-svg.svg', dirname(__FILE__) ) . '" alt="logo"/></div>';
 } elseif ('off' != $sitetitle ) {
 	echo '<div class="nifty-logo"><h1 class="nifty-title">'.$blogname.'</h1></div>';
 
@@ -153,11 +164,11 @@ if( 'off' != $niftylogo ) {
         $slide_index++;
       }
       if (ot_get_option( 'enable_contact_details' ) != 'off') {
-        echo '<a data-slide-index="' . ($slide_index) . '" href=""><span aria-hidden="true" class="icon-location"></span></a>';
+        echo '<a data-slide-index="' . ($slide_index) . '" href=""><i class="fas fa-info"></i></a>';
         $slide_index++;
       }
       if (ot_get_option( 'enable_social_links' ) != 'off') {
-        echo '<a data-slide-index="' . ($slide_index) . '" href=""><span aria-hidden="true" class="icon-thumbs-up"></span></a>';
+        echo '<a data-slide-index="' . ($slide_index) . '" href=""><i class="fas fa-share-square"></i></a>';
         $slide_index++;
       }
       echo '</div>';
@@ -167,12 +178,14 @@ if( 'off' != $niftylogo ) {
                   </div>
               </div>
             </header>
+
             <div class="nifty-row">
             <div class="large-10 small-centered columns text-center">
-            <div class="nifty-coming-soon-message">
+
+            <div class="nifty-coming-soon-message ">
+            	<span class="ensambler">ENSAMBLER</span>
                    <div id="animated_intro" class="tlt">
-                    <ul class="texts" style="display: none">
-                      <li><?php echo 'ENSAMBLER' ?></li>
+                    <ul class="texts text2 uppercase">
                       <li><?php echo ot_get_option( 'your_coming_soon_message', true ); ?></li>
                       <li><?php echo ot_get_option( 'enter_second_coming_soon_message', true ); ?></li>
                     </ul>
@@ -338,21 +351,21 @@ if( 'off' != $niftylogo ) {
     echo '<li>
         <section class="large-12 columns">
 		<div class="nifty-row">
-        <div class="small-12 small-centered columns">
+        <div id="social" class="small-12 small-centered columns">
         <div class="nifty-inform">'.$social_intro.
 		'</div>';
     if (!empty($social_facebook) && $social_facebook != '#')
-      echo '<a href="'.$social_facebook.'"><span aria-hidden="true" class="icon-facebook"></span></a>';
+      echo '<a href="'.$social_facebook.'"><i class="fab fa-facebook-f"></i></a>';
     if (!empty($social_twitter) && $social_twitter != '#')
 		  echo '<a href="'.$social_twitter.'"><span aria-hidden="true" class="icon-twitter"></span></a>';
     if (!empty($social_linkedin) && $social_linkedin != '#')
-      echo '<a href="'.$social_linkedin.'"><span aria-hidden="true" class="icon-linkedin"></span></a>';
+      echo '<a href="'.$social_linkedin.'"><i class="fab fa-linkedin-in"></i></a>';
     if (!empty($social_pinterest) && $social_pinterest != '#')
       echo '<a href="'.$social_pinterest.'"><span aria-hidden="true" class="icon-pinterest"></span></a>';
     if (!empty($social_instagram) && $social_instagram != '#')
       echo '<a href="'.$social_instagram.'"><span aria-hidden="true" class="icon-instagram"></span></a>';
     if (!empty($social_googleplus) && $social_googleplus!= '#')
-      echo '<a href="'.$social_googleplus.'"><span aria-hidden="true" class="icon-google-plus"></span></a>';
+      echo '<a href="'.$social_googleplus.'"><i class="fab fa-github"></i></a>';
     if (!empty($social_vimeo) && $social_vimeo != '#')
       echo '<a href="' . $social_vimeo .'"><span aria-hidden="true" class="icon-vimeo"></span></a>';
 
@@ -372,7 +385,10 @@ if( 'off' != $niftylogo ) {
     </ul>
   </div>
 </div>
+<div class="scrollme">
+	<a href="#"><i class="fas fa-chevron-right"></i></a>
 </div>
+</div> <!-- end main wrapper -->
 
 
 <!-- jQuery Vegas Background Slider -->

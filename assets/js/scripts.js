@@ -2,19 +2,26 @@
 
 jQuery(document).ready(function($){
 
-jQuery('.bxslider').bxSlider({
+$bxslider = jQuery('.bxslider').bxSlider({
 	  pagerCustom: '#slider-navigation',
-	  controls: false,
+	  controls: false
 	});
 
+});
+
+jQuery('.scrollme i').on('click', function() {
+  //alert('clicked');
+  $bxslider.goToPrevSlide();
+  return false;
 });
 
 // Preloader //
 
 jQuery(document).ready(function($) {
-$(window).load(function(){
+  // Se reemplaza preloader nativo por pace.js
+/*$(window).load(function(){
 	$('#preloader').fadeOut('fast',function(){$(this).remove();});
-});
+});*/
 
 // Email Form Settings //
 
